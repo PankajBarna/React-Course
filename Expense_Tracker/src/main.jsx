@@ -39,16 +39,6 @@ const router = createBrowserRouter(
   )
 );
 
-// const router = createBrowserRouter(
-//   createRoutesFromElements(
-//     <Route path="/" element={<Layout />}>
-//       <Route path="" element={<MainContent />}>
-//         <Route path="settings" element={<Settings />} />
-//       </Route>
-//     </Route>
-//   )
-// );
-
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />

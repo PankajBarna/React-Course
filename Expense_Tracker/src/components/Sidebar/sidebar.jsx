@@ -10,29 +10,21 @@ export default function Sidebar() {
     "Budget",
     "Categories",
     "Goals",
-    "Help"
+    "Help",
   ];
   return (
-    // <div>Sidebar</div>
-    <aside className="fixed top-16 left-0 w-64 h-[calc(100vh-4rem)] bg-slate-100 p-6 shadow-none overflow-y-auto scrollbar-hide">
+      <aside className="fixed top-16 left-0 w-64 h-[calc(100vh-4rem)] bg-zinc-50 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 p-6 shadow-none overflow-y-auto scrollbar-hide">
       <div className="flex flex-col justify-between h-full">
         <ul className="space-y-6">
           {sidebarItems.map((item) => (
-            // <li
-            //   key={item}
-            //   className="cursor-pointer px-4 py-2.5 mb-1 rounded-md text-slate-700 hover:bg-blue-200 hover:text-blue-800 transition-colors duration-150"
-            // >
-            //   {item}
-            // </li>
-
             <li key={item} className="mb-1">
               <NavLink
                 to={item === "Dashboard" ? "/" : `/${item.toLowerCase()}`}
                 className={({ isActive }) =>
                   `${
                     isActive
-                      ? "bg-blue-500 text-white"
-                      : "bg-slate-100 text-slate-700 hover:bg-blue-200 hover:text-blue-800 transition-colors duration-150"
+                      ? "bg-linear-to-br/srgb from-cyan-400 to-violet-300 text-zinc-800 dark:text-zinc-800"
+                      : "text-zinc-800 dark:hover:bg-zinc-700 dark:text-zinc-100 hover:bg-zinc-100  transition-colors duration-150"
                   } cursor-pointer block px-4 py-2.5 rounded-md `
                 }
               >
@@ -41,12 +33,16 @@ export default function Sidebar() {
             </li>
           ))}
         </ul>
-        <ul className="mt-20">
-          <li className="mt-10 cursor-pointer px-4 py-2.5 mb-1 rounded-md text-slate-700 hover:bg-red-200 hover:text-red-800 transition-colors duration-150">
-            Logout
-          </li>
-        </ul>
+
+        <div className="w-full bg-cyan-200 rounded-xl">
+          <ul className="mt-20">
+            <li className="mt-10 cursor-pointer py-2.5 mb-1 rounded-md text-slate-700 dark:hover:bg-red-700 dark:text-slate-100 hover:bg-red-200  transition-colors duration-150">
+              Logout
+            </li>
+          </ul>
+        </div>
       </div>
     </aside>
+    
   );
 }
